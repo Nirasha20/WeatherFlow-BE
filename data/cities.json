@@ -1,0 +1,229 @@
+{
+  "cities": [
+    {
+      "CityCode": 2172797,
+      "CityName": "Cairns",
+      "Country": "AU",
+      "Coordinates": {
+        "lat": -16.9186,
+        "lon": 145.7781
+      }
+    },
+    {
+      "CityCode": 2147714,
+      "CityName": "Sydney",
+      "Country": "AU",
+      "Coordinates": {
+        "lat": -33.8688,
+        "lon": 151.2093
+      }
+    },
+    {
+      "CityCode": 2158177,
+      "CityName": "Melbourne",
+      "Country": "AU",
+      "Coordinates": {
+        "lat": -37.8136,
+        "lon": 144.9631
+      }
+    },
+    {
+      "CityCode": 2643743,
+      "CityName": "London",
+      "Country": "GB",
+      "Coordinates": {
+        "lat": 51.5074,
+        "lon": -0.1278
+      }
+    },
+    {
+      "CityCode": 2988507,
+      "CityName": "Paris",
+      "Country": "FR",
+      "Coordinates": {
+        "lat": 48.8566,
+        "lon": 2.3522
+      }
+    },
+    {
+      "CityCode": 1850144,
+      "CityName": "Tokyo",
+      "Country": "JP",
+      "Coordinates": {
+        "lat": 35.6762,
+        "lon": 139.6503
+      }
+    },
+    {
+      "CityCode": 5128581,
+      "CityName": "New York",
+      "Country": "US",
+      "Coordinates": {
+        "lat": 40.7128,
+        "lon": -74.0060
+      }
+    },
+    {
+      "CityCode": 5368361,
+      "CityName": "Los Angeles",
+      "Country": "US",
+      "Coordinates": {
+        "lat": 34.0522,
+        "lon": -118.2437
+      }
+    },
+    {
+      "CityCode": 1796236,
+      "CityName": "Shanghai",
+      "Country": "CN",
+      "Coordinates": {
+        "lat": 31.2304,
+        "lon": 121.4737
+      }
+    },
+    {
+      "CityCode": 1819729,
+      "CityName": "Hong Kong",
+      "Country": "HK",
+      "Coordinates": {
+        "lat": 22.3193,
+        "lon": 114.1694
+      }
+    },
+    {
+      "CityCode": 1275339,
+      "CityName": "Mumbai",
+      "Country": "IN",
+      "Coordinates": {
+        "lat": 19.0760,
+        "lon": 72.8777
+      }
+    },
+    {
+      "CityCode": 292223,
+      "CityName": "Dubai",
+      "Country": "AE",
+      "Coordinates": {
+        "lat": 25.2048,
+        "lon": 55.2708
+      }
+    },
+    {
+      "CityCode": 3451190,
+      "CityName": "Rio de Janeiro",
+      "Country": "BR",
+      "Coordinates": {
+        "lat": -22.9068,
+        "lon": -43.1729
+      }
+    },
+    {
+      "CityCode": 3435910,
+      "CityName": "Buenos Aires",
+      "Country": "AR",
+      "Coordinates": {
+        "lat": -34.6037,
+        "lon": -58.3816
+      }
+    },
+    {
+      "CityCode": 2950159,
+      "CityName": "Berlin",
+      "Country": "DE",
+      "Coordinates": {
+        "lat": 52.5200,
+        "lon": 13.4050
+      }
+    },
+    {
+      "CityCode": 524901,
+      "CityName": "Moscow",
+      "Country": "RU",
+      "Coordinates": {
+        "lat": 55.7558,
+        "lon": 37.6173
+      }
+    },
+    {
+      "CityCode": 3530597,
+      "CityName": "Mexico City",
+      "Country": "MX",
+      "Coordinates": {
+        "lat": 19.4326,
+        "lon": -99.1332
+      }
+    },
+    {
+      "CityCode": 6167865,
+      "CityName": "Toronto",
+      "Country": "CA",
+      "Coordinates": {
+        "lat": 43.6532,
+        "lon": -79.3832
+      }
+    },
+    {
+      "CityCode": 3169070,
+      "CityName": "Rome",
+      "Country": "IT",
+      "Coordinates": {
+        "lat": 41.9028,
+        "lon": 12.4964
+      }
+    },
+    {
+      "CityCode": 2759794,
+      "CityName": "Amsterdam",
+      "Country": "NL",
+      "Coordinates": {
+        "lat": 52.3676,
+        "lon": 4.9041
+      }
+    },
+    {
+      "CityCode": 1880252,
+      "CityName": "Singapore",
+      "Country": "SG",
+      "Coordinates": {
+        "lat": 1.3521,
+        "lon": 103.8198
+      }
+    },
+    {
+      "CityCode": 2950159,
+      "CityName": "Bangkok",
+      "Country": "TH",
+      "Coordinates": {
+        "lat": 13.7563,
+        "lon": 100.5018
+      }
+    },
+    {
+      "CityCode": 1273294,
+      "CityName": "Delhi",
+      "Country": "IN",
+      "Coordinates": {
+        "lat": 28.7041,
+        "lon": 77.1025
+      }
+    },
+    {
+      "CityCode": 3448439,
+      "CityName": "São Paulo",
+      "Country": "BR",
+      "Coordinates": {
+        "lat": -23.5505,
+        "lon": -46.6333
+      }
+    },
+    {
+      "CityCode": 360630,
+      "CityName": "Cairo",
+      "Country": "EG",
+      "Coordinates": {
+        "lat": 30.0444,
+        "lon": 31.2357
+      }
+    }
+  ]
+}
