@@ -71,10 +71,60 @@ const getStats = () => {
   return cache.getStats();
 };
 
+/**
+ * Get all cache keys
+ * @returns {array} Array of cache keys
+ */
+const getKeys = () => {
+  try {
+    return cache.keys();
+  } catch (error) {
+    console.error('Cache getKeys error:', error);
+    return [];
+  }
+};
+
+/**
+ * Get detailed cache status for debugging
+ * @returns {object} Detailed cache information
+ */
+const getDebugInfo = () => {
+  try {
+    const stats = cache.getStats();
+    const keys = cache.keys();
+    
+    return {
+      stats: {
+        keys: stats.keys,
+        hits: stats.hits,
+        misses: stats.misses,
+        hitRate: stats.keys > 0 ? ((stats.hits / (stats.hits + stats.misses)) * 100).toFixed(2) + '%' : '0%',
+        ksize: stats.ksize,
+        vsize: stats.vsize
+      },
+      config: {
+        stdTTL: cache.options.stdTTL,
+        checkperiod: cache.options.checkperiod,
+        useClones: cache.options.useClones
+      },
+      keys: keys.map(key => ({
+        key,
+        ttl: cache.getTtl(key),
+        expiresIn: cache.getTtl(key) ? Math.floor((cache.getTtl(key) - Date.now()) / 1000) + 's' : 'N/A'
+      }))
+    };
+  } catch (error) {
+    console.error('Cache getDebugInfo error:', error);
+    return null;
+  }
+};
+
 module.exports = {
   get,
   set,
   del,
   flush,
-  getStats
+  getStats,
+  getKeys,
+  getDebugInfo
 };

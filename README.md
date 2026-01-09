@@ -14,21 +14,58 @@ A secure weather analytics API built with Node.js, Express, MongoDB, and Auth0 a
 
 ## Comfort Index Algorithm
 
-The custom Comfort Index considers multiple weather factors:
+### Formula Design & Reasoning
 
-- **Temperature** (35% weight): Ideal range 18-24°C
-- **Humidity** (25% weight): Ideal range 40-60%
-- **Wind Speed** (20% weight): Ideal < 20 km/h
-- **Atmospheric Pressure** (20% weight): Ideal 1013 ± 10 hPa
-- **Penalties**: Precipitation, extreme cloud cover, high UV index
+The custom Comfort Index is a weighted scoring system (0-100) that evaluates human comfort based on multiple weather parameters. The algorithm was designed based on meteorological research and human comfort zones.
 
-**Score Ranges:**
-- 90-100: Excellent
-- 75-89: Very Good
-- 60-74: Good
-- 45-59: Fair
-- 30-44: Poor
-- 0-29: Very Poor
+**Parameters & Weights:**
+
+1. **Temperature (40% weight)** - Most significant factor affecting human comfort
+   - Ideal range: 18-24°C (64-75°F)
+   - Perfect score at 20-22°C
+   - Gradually decreases outside this range
+   - Extreme temperatures (<5°C or >37°C) score very low
+
+2. **Humidity (25% weight)** - Critical for perceived temperature and comfort
+   - Ideal range: 40-60%
+   - High humidity makes heat feel oppressive
+   - Low humidity causes dry skin and respiratory discomfort
+   - Extreme humidity (<20% or >80%) significantly impacts comfort
+
+3. **Wind Speed (15% weight)** - Affects wind chill and perceived temperature
+   - Ideal: <10 km/h (gentle breeze)
+   - Moderate winds (10-30 km/h) slightly reduce comfort
+   - Strong winds (>40 km/h) create discomfort and safety concerns
+
+4. **Cloud Cover (10% weight)** - Influences mood and UV exposure
+   - Ideal: 20-50% (partly cloudy)
+   - Complete overcast or clear skies score lower
+   - Moderate cloud cover provides pleasant conditions
+
+5. **Visibility (10% weight)** - Indicates air quality and atmospheric conditions
+   - Ideal: >8 km (clear visibility)
+   - Reduced visibility suggests fog, pollution, or precipitation
+   - Poor visibility (<2 km) indicates hazardous conditions
+
+### Calculation Method
+
+```
+Comfort Index = (T_score × 0.40) + (H_score × 0.25) + (W_score × 0.15) + (C_score × 0.10) + (V_score × 0.10)
+```
+
+Each parameter is individually scored from 0-100 using specific curves, then weighted and summed for the final score.
+
+**Score Ranges & Classifications:**
+- 90-100: Excellent (Perfect weather conditions)
+- 75-89: Very Good (Highly comfortable)
+- 60-74: Good (Pleasant conditions)
+- 45-59: Fair (Acceptable but not ideal)
+- 30-44: Poor (Uncomfortable conditions)
+- 0-29: Very Poor (Severe discomfort)
+
+**Why This Formula?**
+
+This algorithm prioritizes factors that humans physiologically respond to most strongly. Temperature and humidity together account for 65% of the score because they directly impact the body's ability to regulate temperature through sweating and heat exchange. Wind, cloud cover, and visibility contribute to overall perceived comfort but have less physiological impact, hence lower weights.
 
 ## Prerequisites
 
