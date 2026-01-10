@@ -7,6 +7,7 @@ class WeatherService {
   constructor() {
     this.baseURL = process.env.WEATHER_API_URL;
     this.apiKey = process.env.WEATHER_API_KEY;
+    console.log('🔑 API Key loaded:', this.apiKey ? `${this.apiKey.substring(0, 8)}...` : 'MISSING');
   }
 
   /**

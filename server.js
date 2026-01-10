@@ -40,16 +40,20 @@ app.use(express.urlencoded({ extended: true }));
 // Logging middleware
 app.use(morgan('dev'));
 
-// MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('✅ MongoDB Connected Successfully'))
-.catch((err) => {
-  console.error('❌ MongoDB Connection Error:', err.message);
-  process.exit(1);
-});
+// MongoDB Connection (Optional - for storing historical data)
+if (process.env.MONGODB_URI && process.env.MONGODB_URI !== 'mongodb://localhost:27017/weatherflow') {
+  mongoose.connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log('✅ MongoDB Connected Successfully'))
+  .catch((err) => {
+    console.warn('⚠️  MongoDB Connection Warning:', err.message);
+    console.log('ℹ️  Continuing without MongoDB (historical data will not be saved)');
+  });
+} else {
+  console.log('ℹ️  MongoDB not configured - running without persistent storage');
+}
 
 // Health check route
 app.get('/health', (req, res) => {
