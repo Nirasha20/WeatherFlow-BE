@@ -7,14 +7,14 @@ const { optionalAuth, checkJwt } = require('../middleware/auth');
 router.get('/current', optionalAuth, weatherController.getCurrentWeather);
 router.get('/coordinates', optionalAuth, weatherController.getWeatherByCoordinates);
 router.get('/forecast', optionalAuth, weatherController.getForecast);
-router.get('/all-cities', weatherController.getAllCitiesWeather);
+router.get('/all-cities', checkJwt, weatherController.getAllCitiesWeather);
 
-// Cache debug endpoints
-router.get('/cache/debug', weatherController.getCacheDebug);
-router.post('/cache/flush', weatherController.flushCache);
+// Cache debug endpoints (protected)
+router.get('/cache/debug', checkJwt, weatherController.getCacheDebug);
+router.post('/cache/flush', checkJwt, weatherController.flushCache);
 
 // Protected routes (authentication required)
 router.get('/history', checkJwt, weatherController.getHistoricalData);
-router.post('/compare', optionalAuth, weatherController.compareWeather);
+router.post('/compare', checkJwt, weatherController.compareWeather);
 
 module.exports = router;

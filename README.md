@@ -4,13 +4,13 @@ A secure weather analytics API built with Node.js, Express, MongoDB, and Auth0 a
 
 ## Features
 
-- 🌤️ **Weather Data Retrieval**: Integration with OpenWeatherMap API
-- 📊 **Custom Comfort Index**: Proprietary algorithm analyzing temperature, humidity, wind, pressure, and more
-- 🔐 **Auth0 Authentication**: Secure JWT-based authentication and authorization
-- ⚡ **Caching Layer**: Redis-like in-memory caching for optimal performance
-- 📈 **Analytics Engine**: Historical data tracking and trend analysis
-- 🛡️ **Security**: Helmet, rate limiting, CORS protection
-- 🗄️ **MongoDB Storage**: Persistent data storage with efficient indexing
+- **Weather Data Retrieval**: Integration with OpenWeatherMap API
+- **Custom Comfort Index**: Proprietary algorithm analyzing temperature, humidity, wind, pressure, and more
+- **Auth0 Authentication**: Secure JWT-based authentication and authorization
+- **Caching Layer**: Redis-like in-memory caching for optimal performance
+- **Analytics Engine**: Historical data tracking and trend analysis
+- **Security**: Helmet, rate limiting, CORS protection
+- **MongoDB Storage**: Persistent data storage with efficient indexing
 
 ## Comfort Index Algorithm
 
